@@ -111,7 +111,6 @@ const WeatherApp = () => {
       )}
     </div>
   );
-
 };
 
 export default WeatherApp;
