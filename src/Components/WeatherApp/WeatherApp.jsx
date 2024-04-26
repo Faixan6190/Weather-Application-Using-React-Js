@@ -85,7 +85,7 @@ const WeatherApp = () => {
       {location ? (
         <React.Fragment>
           <div className="weather-image">
-            <img src={wIcon} alt="" />
+            <img src={wIcon} alt="wIcon" />
           </div>
           <div className="weather-temp">{temperature}°C</div>
           <div className="weather-location">{location}</div>
