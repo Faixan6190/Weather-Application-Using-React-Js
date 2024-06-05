@@ -26,40 +26,36 @@ const WeatherApp = () => {
     }
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&appid=${api_key}&units=metric`;
     let response = await fetch(url);
+    console.log("response", response);
     let data = await response.json();
 
     const weatherInfo = {
-      humidity: data.main.humidity,
-      wind: Math.floor(data.wind.speed),
-      temperature: Math.floor(data.main.temp),
+      humidity: data?.main?.humidity,
+      wind: Math.floor(data?.wind?.speed),
+      temperature: Math.floor(data?.main?.temp),
       location: data.name,
     };
+    console.log("weatherInfo", weatherInfo);
 
-    if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n") {
+    if (data?.weather[0].icon === "01d" || data?.weather[0].icon === "01n") {
       weatherInfo.wIcon = clear_icon;
-    } else if (
-      data.weather[0].icon === "02d" ||
-      data.weather[0].icon === "02n"
-    ) {
+    } else if (data.weather[0].icon === "02d" || data.weather[0].icon === "02n") {
       weatherInfo.wIcon = cloud_icon;
     } else if (
-      data.weather[0].icon === "03d" ||
-      data.weather[0].icon === "03n" ||
-      data.weather[0].icon === "04d" ||
-      data.weather[0].icon === "04n"
+      data?.weather[0].icon === "03d" ||
+      data?.weather[0].icon === "03n" ||
+      data?.weather[0].icon === "04d" ||
+      data?.weather[0].icon === "04n"
     ) {
       weatherInfo.wIcon = drizzle_icon;
     } else if (
-      data.weather[0].icon === "09d" ||
-      data.weather[0].icon === "09n" ||
-      data.weather[0].icon === "10d" ||
-      data.weather[0].icon === "10n"
+      data?.weather[0].icon === "09d" ||
+      data?.weather[0].icon === "09n" ||
+      data?.weather[0].icon === "10d" ||
+      data?.weather[0].icon === "10n"
     ) {
       weatherInfo.wIcon = rain_icon;
-    } else if (
-      data.weather[0].icon === "13d" ||
-      data.weather[0].icon === "13n"
-    ) {
+    } else if (data.weather[0].icon === "13d" || data.weather[0].icon === "13n") {
       weatherInfo.wIcon = snow_icon;
     } else {
       weatherInfo.wIcon = clear_icon;
