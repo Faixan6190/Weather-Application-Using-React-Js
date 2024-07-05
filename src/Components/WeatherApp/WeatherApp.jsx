@@ -75,7 +75,7 @@ const WeatherApp = () => {
             search();
           }}
         >
-          <img src={search_icon} alt="" />
+          <img src={search_icon} alt="search-icon" />
         </div>
       </div>
       {location ? (
