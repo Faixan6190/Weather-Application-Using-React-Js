@@ -18,6 +18,7 @@ const WeatherApp = () => {
     temperature: null,
     location: null,
   });
+  
 
   const search = async () => {
     const element = document.getElementsByClassName("cityInput");
