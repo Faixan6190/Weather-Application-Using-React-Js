@@ -18,7 +18,7 @@ const WeatherApp = () => {
     temperature: null,
     location: null,
   });
-  
+
   const search = async () => {
     const element = document.getElementsByClassName("cityInput");
     if (element[0].value === "") {
@@ -34,7 +34,6 @@ const WeatherApp = () => {
       temperature: Math.floor(data?.main?.temp),
       location: data.name,
     };
-    console.log("weatherInfo", weatherInfo);
 
     if (data?.weather[0].icon === "01d" || data?.weather[0].icon === "01n") {
       weatherInfo.wIcon = clear_icon;
@@ -107,6 +106,5 @@ const WeatherApp = () => {
     </div>
   );
 };
-
 
 export default WeatherApp;
