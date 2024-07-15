@@ -26,7 +26,6 @@ const WeatherApp = () => {
     }
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&appid=${api_key}&units=metric`;
     let response = await fetch(url);
-    console.log("response", response);
     let data = await response.json();
 
     const weatherInfo = {
